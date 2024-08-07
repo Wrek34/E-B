@@ -34,3 +34,8 @@ footer {
     text-align: center;
     padding: 10px 20px;
 }
+
+audio {
+    width: 100%;  // Ensures the audio player stretches to fit its container
+    outline: none;  // Removes focus outline for a cleaner look
+}
