@@ -51,3 +51,19 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     .then(data => alert('Message sent successfully'))
     .catch(error => console.error('Error:', error));
 });
+
+document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = document.getElementById('newsletterEmail').value;
+
+    fetch('server_endpoint/subscribe', {  // Replace 'server_endpoint/subscribe' with your actual server endpoint
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email })
+    })
+    .then(response => response.json())
+    .then(data => alert('Thank you for subscribing!'))
+    .catch(error => console.error('Error:', error));
+});
