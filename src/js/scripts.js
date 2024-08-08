@@ -67,3 +67,23 @@ document.getElementById('newsletterForm').addEventListener('submit', function(ev
     .then(data => alert('Thank you for subscribing!'))
     .catch(error => console.error('Error:', error));
 });
+
+function loadResources() {
+    fetch('data/resources.json')
+    .then(response => response.json())
+    .then(resources => {
+        const resourcesContainer = document.getElementById('resources-list');
+        resources.forEach(resource => {
+            const resourceElement = document.createElement('div');
+            resourceElement.innerHTML = `
+                <h3>${resource.title}</h3>
+                <p>${resource.description}</p>
+                <a href="${resource.link}" target="_blank">Learn More</a>
+            `;
+            resourcesContainer.appendChild(resourceElement);
+        });
+    })
+    .catch(error => console.error('Error loading resources:', error));
+}
+
+document.addEventListener('DOMContentLoaded', loadResources);
