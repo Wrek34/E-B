@@ -87,3 +87,8 @@ function loadResources() {
 }
 
 document.addEventListener('DOMContentLoaded', loadResources);
+
+function changeSpeed(speed) {
+    const player = document.getElementById('player');
+    player.playbackRate = speed;
+}
