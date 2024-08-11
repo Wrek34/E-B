@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div id="login">
+        <input type="email" id="emailLogin" placeholder="Email">
+        <input type="password" id="passwordLogin" placeholder="Password">
+        <button onclick="login(emailLogin.value, passwordLogin.value)">Login</button>
+    </div>
+    <div id="signUp">
+        <input type="email" id="emailSignUp" placeholder="Email">
+        <input type="password" id="passwordSignUp" placeholder="Password">
+        <button onclick="signUp(emailSignUp.value, passwordSignUp.value)">Sign Up</button>
+    </div>
+    <script src="src/js/auth.js"></script>
+</body>
+</html>
