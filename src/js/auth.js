@@ -21,21 +21,23 @@ export function login(email, password) {
             console.error('Error logging in:', error);
         });
 }
-
-// Add validation function
+// Validates email format and password strength
 function validateEmailAndPassword(email, password) {
+    // Regex for validating email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValidEmail = emailRegex.test(email);
-    const isValidPassword = password.length >= 8; // Simple example, can be more complex
+    const isValidPassword = password.length >= 8; // Example: at least 8 characters
     return isValidEmail && isValidPassword;
 }
 
-// Update signUp and login functions to include validation
+// Function to handle user sign-up
 function signUp(email, password) {
+    // First, validate the user's email and password
     if (!validateEmailAndPassword(email, password)) {
         alert('Invalid email or password. Password must be at least 8 characters.');
         return;
     }
+    // If valid, proceed to create user with Firebase Authentication
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log('Signed up successfully!');
@@ -43,7 +45,7 @@ function signUp(email, password) {
         })
         .catch((error) => {
             console.error('Error signing up:', error);
-            alert(error.message);
+            alert(error.message); // Display error message to user
         });
 }
 

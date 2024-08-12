@@ -52,3 +52,34 @@ label {
 <!-- Example of using srcset for responsive images -->
 <img src="default.jpg" srcset="small.jpg 480w, medium.jpg 960w, large.jpg 1440w" alt="Dynamic Image">
 
+/* Styles for responsive images using srcset */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* General layout and typography styles for readability and accessibility */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Specific styles for quiz and form elements for better user experience */
+input[type="radio"], input[type="email"], input[type="password"] {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+button {
+    padding: 10px 20px;
+    background-color: #005792;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #003d5b;
+}
+
