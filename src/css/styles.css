@@ -49,3 +49,6 @@ label {
     display: block;
     margin: 5px;
 }
+<!-- Example of using srcset for responsive images -->
+<img src="default.jpg" srcset="small.jpg 480w, medium.jpg 960w, large.jpg 1440w" alt="Dynamic Image">
+
