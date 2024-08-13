@@ -1,11 +1,25 @@
-<input type="text" id="searchInput" placeholder="Search episodes" onkeyup="filterEpisodes()">
-<div id="episodes-list"></div>
-<div id="audio-player">
-    <audio id="player" controls>
-        <source src="path_to_audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <button onclick="changeSpeed(1)">1x</button>
-    <button onclick="changeSpeed(1.5)">1.5x</button>
-    <button onclick="changeSpeed(2)">2x</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episodes | Enneagram and Beyond</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation links similar to index.html -->
+        </nav>
+    </header>
+    <main>
+        <h1>Podcast Episodes</h1>
+        <input type="text" id="searchInput" placeholder="Search episodes" onkeyup="filterEpisodes()">
+        <div id="episodes-list"></div>
+    </main>
+    <footer>
+        <!-- Footer similar to index.html -->
+    </footer>
+    <script src="src/js/scripts.js"></script>
+</body>
+</html>
