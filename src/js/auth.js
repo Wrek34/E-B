@@ -2,50 +2,35 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 
 const auth = getAuth();
 
+function validateEmailAndPassword(email, password) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || password.length < 8) {
+        alert('Invalid email or password format. Password must be at least 8 characters long.');
+        return false;
+    }
+    return true;
+}
+
 export function signUp(email, password) {
+    if (!validateEmailAndPassword(email, password)) return;
+    
     createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            console.log('Signed up successfully!');
+        .then(() => {
+            alert('Registration successful!');
         })
         .catch((error) => {
             console.error('Error signing up:', error);
+            alert(error.message);
         });
 }
 
 export function login(email, password) {
     signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(() => {
             console.log('Logged in successfully!');
         })
         .catch((error) => {
             console.error('Error logging in:', error);
+            alert(error.message);
         });
 }
-// Validates email format and password strength
-function validateEmailAndPassword(email, password) {
-    // Regex for validating email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isValidEmail = emailRegex.test(email);
-    const isValidPassword = password.length >= 8; // Example: at least 8 characters
-    return isValidEmail && isValidPassword;
-}
-
-// Function to handle user sign-up
-function signUp(email, password) {
-    // First, validate the user's email and password
-    if (!validateEmailAndPassword(email, password)) {
-        alert('Invalid email or password. Password must be at least 8 characters.');
-        return;
-    }
-    // If valid, proceed to create user with Firebase Authentication
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            console.log('Signed up successfully!');
-            alert('Registration successful!');
-        })
-        .catch((error) => {
-            console.error('Error signing up:', error);
-            alert(error.message); // Display error message to user
-        });
-}
-
