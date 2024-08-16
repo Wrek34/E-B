@@ -1,6 +1,21 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 const auth = getAuth();
+const provider = new GoogleAuthProvider();
+
+// Function to handle Google Sign-In
+export function googleSignIn() {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // The signed-in user info.
+      const user = result.user;
+      console.log('Logged in as:', user.displayName);
+      // You can also redirect the user or perform other actions here
+    }).catch((error) => {
+      console.error('Login failed:', error.message);
+    });
+}
+
 
 function validateEmailAndPassword(email, password) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -34,3 +49,5 @@ export function login(email, password) {
             alert(error.message);
         });
 }
+
+
