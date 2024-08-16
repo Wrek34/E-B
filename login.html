@@ -8,23 +8,21 @@
 </head>
 <body>
     <header>
-        <!-- Header content -->
+        <!-- Navigation or header content -->
     </header>
     <main>
-        <div id="login">
-            <input type="email" id="emailLogin" placeholder="Email">
-            <input type="password" id="passwordLogin" placeholder="Password">
-            <button onclick="login(emailLogin.value, passwordLogin.value)">Login</button>
-        </div>
-        <div id="signUp">
-            <input type="email" id="emailSignUp" placeholder="Email">
-            <input type="password" id="passwordSignUp" placeholder="Password">
-            <button onclick="signUp(emailSignUp.value, passwordSignUp.value)">Sign Up</button>
-        </div>
+        <h1>Login Page</h1>
+        <button id="googleLogin">Login with Google</button>
+        <!-- Other login forms if necessary -->
     </main>
     <footer>
         <!-- Footer content -->
     </footer>
     <script src="src/js/auth.js"></script>
+    <script>
+      document.getElementById('googleLogin').addEventListener('click', function() {
+        googleSignIn();
+      });
+    </script>
 </body>
 </html>
