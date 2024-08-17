@@ -83,3 +83,30 @@ button:hover {
     background-color: #003d5b;
 }
 
+/* styles.css: Basic Responsive Styling */
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+/* Tablet and desktop styles */
+@media (min-width: 601px) {
+    body {
+        font-size: 16px;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+}
