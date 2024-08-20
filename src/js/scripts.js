@@ -72,3 +72,17 @@ document.getElementById('submit-comment').addEventListener('click', function() {
         timestamp: new Date().toISOString()
     });
 });
+
+// Example: Enhance form validation in scripts.js
+document.getElementById('contactForm').addEventListener('input', function(event) {
+    const inputField = event.target;
+    if (inputField.type === 'email' && inputField.value) {
+        if (!inputField.value.includes('@')) {
+            inputField.setCustomValidity('Please enter a valid email address.');
+        } else {
+            inputField.setCustomValidity('');
+        }
+    }
+    inputField.reportValidity();
+});
+
