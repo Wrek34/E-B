@@ -110,3 +110,24 @@ button:hover {
         flex-direction: row;
     }
 }
+
+<!-- Add to styles.css -->
+header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px; /* Larger tap targets for touch devices */
+}
