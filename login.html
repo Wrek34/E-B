@@ -24,5 +24,17 @@
         googleSignIn();
       });
     </script>
+    <!-- Add to login.html -->
+<script>
+    document.getElementById('email').addEventListener('input', function(e) {
+        if (!this.value.includes('@')) {
+            this.setCustomValidity('Please enter a valid email address.');
+        } else {
+            this.setCustomValidity('');
+        }
+        this.reportValidity();
+    });
+    </script>
+    
 </body>
 </html>
